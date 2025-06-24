@@ -151,15 +151,10 @@ export default {
     //加载Prometheus服务器列表
     async loadPrometheuses(){
       let prometheusServers=[]
-  
-      const crds =await listCustomResourceDefinitions(this.cluster)
-      //检查是否已安装普罗
-      const crd =crds.items.find(item=>item.metadata.name=="prometheuses.monitoring.coreos.com")
-      
 
       let prometheusServers_res={items:[]}
       try{
-         if(crd)
+         if(NaN)
           prometheusServers_res=await  listPrometheuses(this.cluster)
       }catch(e){
           console.log(e)
