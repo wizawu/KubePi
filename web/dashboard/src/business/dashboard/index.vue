@@ -53,7 +53,7 @@
     <el-row v-if="showMetric && hasMetric !== 'true'">
       <el-alert type="info" :closable="false">
         <el-button type="text" style="font-size: 15px" @click="dialogMetricVisible = true" icon="el-icon-warning">{{ $t("business.dashboard.metric_server_help") }}</el-button>
-      </el-alert> 
+      </el-alert>
     </el-row>
     <br>
 
@@ -305,19 +305,6 @@ export default {
           this.resources.push(services)
         })
       }
-      if (checkPermissions({scope: "namespace", apiGroup: "", resource: "secrets", verb: "list"})) {
-        listSecrets(this.clusterName).then(res => {
-          const services = {
-            name: "Secrets",
-            count: res.items? res.items.length : 0,
-            data: [{
-              value: res.items? res.items.length : 0
-            }]
-          }
-          this.resources.push(services)
-        })
-      }
-      
     },
     search(resetPage) {
       this.loading = true
@@ -340,7 +327,7 @@ export default {
             this.paginationConfig.total = results.length
           }).finally(() => {
             this.loading = false
-          }) 
+          })
         }
       }
     },

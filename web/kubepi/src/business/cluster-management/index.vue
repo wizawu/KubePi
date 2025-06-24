@@ -99,7 +99,7 @@
 
       <el-table-column label=" " width="100">
         <template v-slot:default="{row}">
-          <el-button @click="onGotoDashboard(row)" :disabled="!row.extraClusterInfo.health">
+          <el-button @click="onGotoDashboard(row)">
             {{ $t("business.cluster.open_dashboard") }}
           </el-button>
         </template>

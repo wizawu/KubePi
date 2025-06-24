@@ -127,11 +127,7 @@ func (h *Handler) CreateCluster() iris.Handler {
 		}
 
 		requiredPermissions := map[string][]string{
-			"namespaces":       {"get", "post", "delete"},
-			"clusterroles":     {"get", "post", "delete"},
-			"clusterrolebings": {"get", "post", "delete"},
-			"roles":            {"get", "post", "delete"},
-			"rolebindings":     {"get", "post", "delete"},
+			"namespaces":       {"get"},
 		}
 		notAllowed, err := checkRequiredPermissions(client, requiredPermissions)
 		if err != nil {
